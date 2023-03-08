@@ -65,8 +65,6 @@ int establish_connection(char *host, char *port, int *socket_fd) {
         break;
     }
 
-    freeaddrinfo(server_info);
-
     if (current == NULL) {
         fprintf(stderr, "Failed to connect\n");
         return -1;
@@ -75,6 +73,8 @@ int establish_connection(char *host, char *port, int *socket_fd) {
     log_connection_established(current->ai_addr);
 
     *socket_fd = socket_file_descriptor;
+
+    freeaddrinfo(server_info);
 
     return 0;
 }

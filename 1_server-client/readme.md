@@ -15,11 +15,15 @@ Total packet size: message_length + 1
 ### Running
 
 ```sh
-gcc server.c -o server.o
-./server.o [-p port]
+make server-build # for building
+
+./server.bin [-p port] # or
+make server-run port="8080" # for running
 ```
 
 ```sh
-gcc client.c -o client.o
-./client.o [-h host] [-p port]
+make client-build # for building
+
+./client.bin [-h host] [-p port] # or
+make client-run host="localhost" port="8080" # for running
 ```
