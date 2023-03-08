@@ -9,7 +9,7 @@
 
 int create_file_descriptors_poll(int socket_fd, int *connections_num, struct pollfd **fds_poll) {
     int connections = 1;
-    struct pollfd *poll_file_descriptors = (struct pollfd*) malloc(connections * sizeof(struct pollfd*));
+    struct pollfd *poll_file_descriptors = (struct pollfd*) malloc(connections * sizeof(struct pollfd));
     if (poll_file_descriptors == NULL) {
         return -1;
     }
